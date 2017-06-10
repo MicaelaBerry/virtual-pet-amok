@@ -11,14 +11,14 @@ public class VirtualPetApp {
 				VirtualPetShelter shelter = new VirtualPetShelter();
 				Scanner input = new Scanner(System.in);
 
-				OrganicPet steve = new OrgDog("OrgDog", "Shih-Tzu");
-				shelter.intake(steve);
-				RoboPet paul = new RoboDog("RoboDog", "A robotic dog");
-				shelter.intake(paul);
-				OrganicPet jess = new OrgCat("OrgCat", "Siamese");
-				shelter.intake(jess);
-				RoboPet oly = new RoboCat("RoboCat", "A robotic cat");
-				shelter.intake(oly);
+				OrganicPet nitro = new OrgDog("OrgDog", "German Shepard");
+				shelter.intake(nitro);
+				RoboPet K9 = new RoboDog("K9", "K9 Mark I");
+				shelter.intake(K9);
+				OrganicPet louie = new OrgCat("OrgCat", "Siamese");
+				shelter.intake(louie);
+				RoboPet sarah = new RoboCat("Sarah Smith", "K9 Mark I");
+				shelter.intake(sarah);
 
 				boolean quit = false;
 
