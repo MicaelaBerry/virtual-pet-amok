@@ -1,15 +1,40 @@
 package virtual_pets_amok;
 
-public class VirtualPet {
+	import java.util.Random;
 
-	private int oilPets;
-	private int feedPets;
-	private int walkPets;
-	private int waterPets;
-	private int healthOfPet;
-	private int happiness;
-	
-	
-	public String getPetType; //get the type of pet it is
-	
-} //end of code
+	public abstract class VirtualPet {
+
+		protected Random generator = new Random();
+		
+		//Instance variables
+		protected String name;
+		protected String description;
+
+		protected int health;
+		protected int mood;
+		
+		//Constructor that accepts VirtualPet and establishes default attributes for new pets
+		public VirtualPet(String newName, String newDescription) {
+			name = newName;
+			description = newDescription;
+			health = 50;
+			mood = 50;
+		}
+		
+		public abstract String getName();
+		
+		public abstract int getHealth();
+		
+		public abstract int getMood();
+		
+		public abstract void play();
+		
+		public abstract int tick();
+		
+		public abstract int generateRandom();
+		
+		@Override
+		public String toString() {
+			return ("[" + name + "] " + description); 
+		}
+	}
