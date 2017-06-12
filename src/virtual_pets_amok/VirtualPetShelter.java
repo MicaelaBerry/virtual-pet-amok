@@ -88,7 +88,7 @@ public class VirtualPetShelter {
 		litterBox += 5;
 	}
 
-	// Tick method (**ASK BRIAN WHY WE ARE RETURNING CAGE MESSINESS FOR DOGS**)
+	// Tick method 
 	void tickAllPets() {
 		for (OrganicPet p : organicDogs.values()) {
 			p.tick();
@@ -127,7 +127,7 @@ public class VirtualPetShelter {
 
 	// Method to return a pet from the map by name
 	public VirtualPet getPet(String name) {
-		return shelterPets.get(name);
+		return shelterPets.get(name.toLowerCase());
 
 	}
 
@@ -138,19 +138,19 @@ public class VirtualPetShelter {
 
 	// Method to adopt a pet
 	public void adoptPet(VirtualPet pet) {
-		shelterPets.remove(pet.getName());
+		shelterPets.remove(pet.name.toLowerCase());
 
 		if (pet instanceof RoboDog) {
-			roboticDogs.remove(pet.getName(), pet);
+			roboticDogs.remove(pet.name.toLowerCase(), pet);
 		}
 		if (pet instanceof RoboCat) {
-			roboticCats.remove(pet.getName(), pet);
+			roboticCats.remove(pet.name.toLowerCase(), pet);
 		}
 		if (pet instanceof OrgDog) {
-			organicDogs.remove(pet.getName(), pet);
+			organicDogs.remove(pet.name.toLowerCase(), pet);
 		}
 		if (pet instanceof OrgCat) {
-			organicCats.remove(pet.getName(), pet);
+			organicCats.remove(pet.name.toLowerCase(), pet);
 		}
 	}
 }

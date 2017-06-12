@@ -9,14 +9,16 @@ public class VirtualPetApp {
 		VirtualPetShelter shelter = new VirtualPetShelter();
 		Scanner input = new Scanner(System.in);
 
-		OrganicPet donna = new OrgDog("Donna", "German Shepard");
+		OrganicPet donna = new OrgDog("Donna", "Sassy German Shepard");
 		shelter.intake(donna);
 		RoboPet K9 = new RoboDog("K9", "K9 Mark I");
 		shelter.intake(K9);
-		OrganicPet river = new OrgCat("River", "Ginger");
+		OrganicPet river = new OrgCat("River", "Ginger Cat who likes time");
 		shelter.intake(river);
 		RoboPet sarah = new RoboCat("SarahBot", "RoboCat 2.0");
 		shelter.intake(sarah);
+		OrganicPet jack = new OrgDog("Jack", "Terrier with a trenchcoat");
+		shelter.intake(jack);
 
 		boolean quit = false;
 		writeLine("Thank you for volunteering at The Doctor's Shelter for Pets! "
@@ -41,8 +43,7 @@ public class VirtualPetApp {
 				}
 			}
 
-			// writeLine("\nThank you for volunteering at The Doctor's Shelter
-			// for Pets! Take a look at all our pets below. ");
+
 			writeLine("\nHere is the status of all the pets at The Doctor's Shelter for Pets: ");
 			writeLine("\nName\t|Mood\t|Health\t|Hunger\t|Thirst\t|OilLvl\t|CageMess");
 			writeLine("--------|-------|-------|-------|-------|-------|-------");
@@ -85,7 +86,7 @@ public class VirtualPetApp {
 				writeLine("You watered all the companion pets for the Doctor. Everyone appreciates it!");
 				break;
 			case "3": // play
-				writeLine("You want to play with one of the pets? Which one would you like to play with:\n");
+				writeLine("You want to play with one of the companion pets? Which one would you like to play with:\n");
 				displayPets(shelter);
 				writeLine("\nWhich pet would you like to play with? They are all good choices.");
 				String petName = input.nextLine();
@@ -93,7 +94,7 @@ public class VirtualPetApp {
 				writeLine("OK, you play with " + shelter.getPet(petName) + ". ");
 				break;
 			case "4": // adopt
-				writeLine("You want to adopt a pet? Allons-y!\n");
+				writeLine("You want to adopt a companion pet? Allons-y!\n");
 				displayPets(shelter);
 				writeLine("\nWhich pet would you like to adopt? They are all pretty awesome.");
 				String nameToAdopt = input.nextLine();
@@ -102,7 +103,7 @@ public class VirtualPetApp {
 				writeLine("You adopted " + nameToAdopt + ". Please take good care of them!");
 				break;
 			case "5":// intake
-				writeLine("You want to give us a pet? We will always make room for more companions."
+				writeLine("You want to give us a new pet? We will always make room for more companions."
 						+ "Is it organic or robotic?");
 				String response2 = input.next();
 				if (response2.equalsIgnoreCase("organic")) {
@@ -155,15 +156,15 @@ public class VirtualPetApp {
 				break;
 			case "6":
 				shelter.cleanDogCages();
-				writeLine("You clean all the dog cages! The dogs sure do appreciate it.");
+				writeLine("You clean all the dog cages! The companion dogs sure do appreciate it.");
 				break;
 			case "7":
 				shelter.cleanLitterBox();
-				writeLine("You cleaned the litterbox! The cats sure do appreciate it. ");
+				writeLine("You cleaned the litterbox! The companion cats sure do appreciate it. ");
 				break;
 			case "8":
 				shelter.walkDogs();
-				writeLine("You took all the dogs on walk! They are much happier now.");
+				writeLine("You took all the companion dogs on walk! They are much happier now.");
 				break;
 			case "9":
 				shelter.maintainAllRobo();
