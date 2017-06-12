@@ -1,9 +1,9 @@
 package virtual_pets_amok;
 
-public class RoboCat extends Cat implements RoboPet{
+public class RoboCat extends Cat implements RoboPet {
 
 	int oilLevel;
-	
+
 	public RoboCat(String nameParam, String descriptionParam) {
 		super(nameParam, descriptionParam);
 		oilLevel = 50;
@@ -34,7 +34,8 @@ public class RoboCat extends Cat implements RoboPet{
 	@Override
 	public int tick() {
 		mood -= (5 + generateRandom());
-		oilLevel -= (5 + generateRandom());	
+		oilLevel -= (5 + generateRandom());
+		health += (5 + generateRandom());
 		return 0;
 	}
 
@@ -50,12 +51,12 @@ public class RoboCat extends Cat implements RoboPet{
 
 	@Override
 	public int getOilLevel() {
-		return oilLevel;		
+		return oilLevel;
 	}
 
 	@Override
-		public void recharge() {
-			mood += 10;
-			health += 10;
-		}		
+	public void recharge() {
+		mood += 10;
+		health += 10;
 	}
+}

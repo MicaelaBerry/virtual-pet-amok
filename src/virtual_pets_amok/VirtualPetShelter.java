@@ -127,7 +127,7 @@ public class VirtualPetShelter {
 
 	// Method to return a pet from the map by name
 	public VirtualPet getPet(String name) {
-		return shelterPets.get(name.toLowerCase());
+		return shelterPets.get(name);
 
 	}
 
@@ -138,19 +138,19 @@ public class VirtualPetShelter {
 
 	// Method to adopt a pet
 	public void adoptPet(VirtualPet pet) {
-		shelterPets.remove(pet.name.toLowerCase());
+		shelterPets.remove(pet);
 
 		if (pet instanceof RoboDog) {
-			roboticDogs.remove(pet.name.toLowerCase(), pet);
+			roboticDogs.remove(pet.name, pet);
 		}
 		if (pet instanceof RoboCat) {
-			roboticCats.remove(pet.name.toLowerCase(), pet);
+			roboticCats.remove(pet.name, pet);
 		}
 		if (pet instanceof OrgDog) {
-			organicDogs.remove(pet.name.toLowerCase(), pet);
+			organicDogs.remove(pet.name, pet);
 		}
 		if (pet instanceof OrgCat) {
-			organicCats.remove(pet.name.toLowerCase(), pet);
+			organicCats.remove(pet.name, pet);
 		}
 	}
 }

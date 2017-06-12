@@ -1,17 +1,17 @@
 package virtual_pets_amok;
 
-	public interface OrganicPet {
+public interface OrganicPet {
 
-		String getName();
+	String getName();
 
-		void feed();
+	void feed();
 
-		void water();
-		
-		int tick();
-		
-		int getHunger();
-		int getThirst();
+	void water();
 
-	}
+	int tick();
 
+	int getHunger();
+
+	int getThirst();
+
+}

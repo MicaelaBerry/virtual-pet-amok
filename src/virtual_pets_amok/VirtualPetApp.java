@@ -43,7 +43,6 @@ public class VirtualPetApp {
 				}
 			}
 
-
 			writeLine("\nHere is the status of all the pets at The Doctor's Shelter for Pets: ");
 			writeLine("\nName\t|Mood\t|Health\t|Hunger\t|Thirst\t|OilLvl\t|CageMess");
 			writeLine("--------|-------|-------|-------|-------|-------|-------");
@@ -91,16 +90,16 @@ public class VirtualPetApp {
 				writeLine("\nWhich pet would you like to play with? They are all good choices.");
 				String petName = input.nextLine();
 				shelter.playOne(shelter.getPet(petName));
-				writeLine("OK, you play with " + shelter.getPet(petName) + ". ");
+				writeLine("You played with " + shelter.getPet(petName) + "! ");
 				break;
 			case "4": // adopt
 				writeLine("You want to adopt a companion pet? Allons-y!\n");
 				displayPets(shelter);
 				writeLine("\nWhich pet would you like to adopt? They are all pretty awesome.");
-				String nameToAdopt = input.nextLine();
-				VirtualPet x = shelter.getPet(nameToAdopt);
-				shelter.adoptPet(x);
-				writeLine("You adopted " + nameToAdopt + ". Please take good care of them!");
+				String petAdopt = input.nextLine();
+				VirtualPet a = shelter.getPet(petAdopt);
+				shelter.adoptPet(a);
+				writeLine("You adopted " + petAdopt + ". Please take good care of them!");
 				break;
 			case "5":// intake
 				writeLine("You want to give us a new pet? We will always make room for more companions."

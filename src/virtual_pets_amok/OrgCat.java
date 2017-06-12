@@ -13,13 +13,13 @@ public class OrgCat extends Cat implements OrganicPet {
 	@Override
 	public void feed() {
 		hunger -= 10;
-		mood += 10;
+		mood += 5;
 	}
 
 	@Override
 	public void water() {
 		thirst -= 20;
-		mood += 10;
+		mood += 5;
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class OrgCat extends Cat implements OrganicPet {
 
 	@Override
 	public void play() {
-		mood += 20;
+		mood += 10;
 		hunger += 5;
 		thirst += 5;
 	}
@@ -49,6 +49,7 @@ public class OrgCat extends Cat implements OrganicPet {
 		hunger += (5 + generateRandom());
 		thirst += (5 + generateRandom());
 		mood -= (5 + generateRandom());
+		health += (5 + generateRandom());
 		return 5;
 	}
 
